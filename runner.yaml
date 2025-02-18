@@ -1,0 +1,15 @@
+runner:
+  name: web_app_fingerprinting_tool
+  description: A tool for web application fingerprinting that performs DNS, WHOIS,
+    HTTP, and Nmap scans to generate a detailed report.
+  version: 1.0.0
+build:
+  memorysize: 512
+  commands: pip install requests python-whois python-nmap
+webform:
+- name: target
+  prompt: Enter target domain or IP to analyze
+  type: text
+launch:
+  type: python
+  command: app.py ${target}
